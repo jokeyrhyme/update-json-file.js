@@ -6,6 +6,10 @@
   "bugs": {
     "url": "https://github.com/jokeyrhyme/update-json-file.js/issues"
   },
+  "dependencies": {
+    "load-json-file": "^2.0.0",
+    "write-json-file": "^2.0.0"
+  },
   "devDependencies": {
     "eslint": "^3.12.2",
     "eslint-config-standard": "^6.2.1",
@@ -14,7 +18,10 @@
     "eslint-plugin-standard": "^2.0.1",
     "fixpack": "^2.3.1",
     "flow-bin": "^0.37.3",
-    "jest": "^18.0.0"
+    "jest": "^18.0.0",
+    "pify": "^2.3.0",
+    "rimraf": "^2.5.4",
+    "temp": "^0.8.3"
   },
   "engines": {
     "node": ">=4",
