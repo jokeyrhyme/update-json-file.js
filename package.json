@@ -1,0 +1,20 @@
+{
+  "name": "update-json-file",
+  "version": "1.0.0-alpha.1",
+  "description": "safely and conveniently edit the contents of a JSON file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jokeyrhyme/update-json-file.js.git"
+  },
+  "keywords": [],
+  "author": "Ron Waldon <jokeyrhyme@gmail.com> (https://github.com/jokeyrhyme)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jokeyrhyme/update-json-file.js/issues"
+  },
+  "homepage": "https://github.com/jokeyrhyme/update-json-file.js#readme"
+}
