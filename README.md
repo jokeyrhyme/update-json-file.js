@@ -35,9 +35,9 @@ updateJsonFile = (
 
 -   by default, throws an error if the file does not already exist
 
--   "defaultValue" option swallows load/parse errors and calls updater as though file held
+-   "defaultValue" option swallows load/parse errors and calls updater as though file contained this value
 
--   your updater avoid mutating the incoming data and return a clone instead
+-   your updater should avoid mutating the incoming data and return a clone instead
 
 
 ## See Also
