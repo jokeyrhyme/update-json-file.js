@@ -1,7 +1,7 @@
 {
   "name": "update-json-file",
   "description": "safely and conveniently edit the contents of a JSON file",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Ron Waldon <jokeyrhyme@gmail.com> (https://github.com/jokeyrhyme)",
   "bugs": {
     "url": "https://github.com/jokeyrhyme/update-json-file.js/issues"
