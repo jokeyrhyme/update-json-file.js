@@ -117,3 +117,30 @@ test('missing file with defaultValue', () => {
       expect(result).toEqual(expected)
     })
 })
+
+test('missing file with defaultValue()', () => {
+  const filePath = path.join(tempPath, 'missing-with-default-factory.json')
+
+  let isDefaultFactoryCalled = false
+  const options = {
+    defaultValue: () => {
+      isDefaultFactoryCalled = true
+      return { hello: 'world!' }
+    }
+  }
+
+  const expected = { abc: 123, hello: 'world!' }
+  const updater = (x) => {
+    return Promise.resolve(Object.assign({}, x, {
+      abc: 123
+    }))
+  }
+  return Promise.resolve()
+    .then(() => updateJsonFile(filePath, updater, options))
+    .then(() => pify(fs.readFile)(filePath))
+    .then((text) => JSON.parse(text))
+    .then((result) => {
+      expect(isDefaultFactoryCalled).toBe(true)
+      expect(result).toEqual(expected)
+    })
+})

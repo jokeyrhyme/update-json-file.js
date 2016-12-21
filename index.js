@@ -17,6 +17,9 @@ module.exports = function updateJsonFile (
     .then(() => loadJsonFile(filePath))
     .catch((err) => {
       if (options && options.defaultValue) {
+        if (typeof options.defaultValue === 'function') {
+          return options.defaultValue()
+        }
         return options.defaultValue
       }
       throw err

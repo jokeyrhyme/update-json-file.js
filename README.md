@@ -3,7 +3,7 @@
 safely and conveniently edit the contents of a JSON file
 
 
-## Example
+## Quick Example
 
 ```js
 const updateJsonFile = require('update-json-file')
@@ -11,10 +11,8 @@ const updateJsonFile = require('update-json-file')
 const filePath = '/path/to/file/to/update.json'
 
 updateJsonFile(filePath, (data) => {
-  // does not mutate incoming data, but returns a modified clone
-  return Object.assign({}, data, {
-    abc: 123
-  })
+  data.abc = 123
+  return data
 })
 ```
 
@@ -37,7 +35,43 @@ updateJsonFile = (
 
 -   "defaultValue" option swallows load/parse errors and calls updater as though file contained this value
 
--   your updater should avoid mutating the incoming data and return a clone instead
+-   "defaultValue" option can be a factory function, to help avoid mutation
+
+-   your updater should avoid mutating the incoming data and return a clone instead (if necessary)
+
+
+### Examples
+
+Avoiding mutation when defaultValue is the same object every time:
+
+```js
+const updateJsonFile = require('update-json-file')
+
+const filePath = '/path/to/file/to/update.json'
+const options = { defaultValue: {} }
+
+updateJsonFile(filePath, (data) => {
+  // not safe to return `data`, need to return a modified clone
+  return Object.assign({}, data, {
+    abc: 123
+  })
+}, options)
+```
+
+Avoiding mutation by passing a factory function as defaultValue:
+
+```js
+const updateJsonFile = require('update-json-file')
+
+const filePath = '/path/to/file/to/update.json'
+const options = { defaultValue: () => ({}) }
+
+updateJsonFile(filePath, (data) => {
+  // factory function is run each time, so `data` is a new object each time
+  data.abc = 123
+  return data
+}, options)
+```
 
 
 ## See Also
