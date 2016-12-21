@@ -4,7 +4,10 @@
   "description": "safely and conveniently edit the contents of a JSON file",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "flow_check": "flow check",
+    "eslint": "eslint --fix --cache .",
+    "fixpack": "fixpack"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,18 @@
   "bugs": {
     "url": "https://github.com/jokeyrhyme/update-json-file.js/issues"
   },
-  "homepage": "https://github.com/jokeyrhyme/update-json-file.js#readme"
+  "homepage": "https://github.com/jokeyrhyme/update-json-file.js#readme",
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-node": "^3.0.5",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "fixpack": "^2.3.1",
+    "flow-bin": "^0.37.3"
+  },
+  "engines": {
+    "node": ">=4",
+    "npm": ">=3"
+  }
 }
