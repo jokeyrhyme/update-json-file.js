@@ -11,8 +11,10 @@ const updateJsonFile = require('update-json-file')
 const filePath = '/path/to/file/to/update.json'
 
 updateJsonFile(filePath, (data) => {
-  data.abc = 123
-  return data
+  // does not mutate incoming data, but returns a modified clone
+  return Object.assign({}, data, {
+    abc: 123
+  })
 })
 ```
 
@@ -30,6 +32,12 @@ updateJsonFile = (
 ```
 
 -   `options` pass through to [write-json-file](https://github.com/sindresorhus/write-json-file#options)
+
+-   by default, throws an error if the file does not already exist
+
+-   "defaultValue" option swallows load/parse errors and calls updater as though file held
+
+-   your updater avoid mutating the incoming data and return a clone instead
 
 
 ## See Also
