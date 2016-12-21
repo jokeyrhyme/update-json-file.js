@@ -1,25 +1,11 @@
 {
   "name": "update-json-file",
-  "version": "1.0.0-alpha.1",
   "description": "safely and conveniently edit the contents of a JSON file",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "flow_check": "flow check",
-    "eslint": "eslint --fix --cache .",
-    "fixpack": "fixpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jokeyrhyme/update-json-file.js.git"
-  },
-  "keywords": [],
+  "version": "1.0.0-alpha.1",
   "author": "Ron Waldon <jokeyrhyme@gmail.com> (https://github.com/jokeyrhyme)",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jokeyrhyme/update-json-file.js/issues"
   },
-  "homepage": "https://github.com/jokeyrhyme/update-json-file.js#readme",
   "devDependencies": {
     "eslint": "^3.12.2",
     "eslint-config-standard": "^6.2.1",
@@ -27,10 +13,36 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
     "fixpack": "^2.3.1",
-    "flow-bin": "^0.37.3"
+    "flow-bin": "^0.37.3",
+    "jest": "^18.0.0"
   },
   "engines": {
     "node": ">=4",
     "npm": ">=3"
+  },
+  "homepage": "https://github.com/jokeyrhyme/update-json-file.js#readme",
+  "jest": {
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "lines": 90
+      }
+    },
+    "testRegex": "/__tests__/[^\\/]*\\.js$"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jokeyrhyme/update-json-file.js.git"
+  },
+  "scripts": {
+    "eslint": "eslint --fix --cache .",
+    "fixpack": "fixpack",
+    "flow_check": "flow check",
+    "jest": "jest",
+    "posttest": "npm run eslint && npm run flow_check && npm run fixpack",
+    "test": "npm run jest"
   }
 }
