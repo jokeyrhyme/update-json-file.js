@@ -4,6 +4,9 @@
 ## Unreleased
 
 
+## 1.1.1 - 2017-01-27
+
+
 ### Fixed
 
 -   files whitelisted for NPM package (don't publish test files)
