@@ -15,7 +15,7 @@
     "eslint-config-standard": "^7.0.2",
     "eslint-plugin-node": "^4.0.0",
     "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1",
+    "eslint-plugin-standard": "^3.0.0",
     "fixpack": "^2.3.1",
     "flow-bin": "^0.43.0",
     "jest": "^19.0.0",
