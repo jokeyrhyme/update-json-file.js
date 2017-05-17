@@ -19,7 +19,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "fixpack": "^2.3.1",
     "flow-bin": "^0.46.0",
-    "jest": "^19.0.0",
+    "jest": "^20.0.2",
     "pify": "^2.3.0",
     "rimraf": "^2.5.4",
     "temp": "^0.8.3"
