@@ -7,7 +7,7 @@
     "url": "https://github.com/jokeyrhyme/update-json-file.js/issues"
   },
   "dependencies": {
-    "load-json-file": "^2.0.0",
+    "load-json-file": "^3.0.0",
     "write-json-file": "^2.0.0"
   },
   "devDependencies": {
