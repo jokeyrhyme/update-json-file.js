@@ -1,10 +1,31 @@
 {
   "name": "update-json-file",
-  "description": "safely and conveniently edit the contents of a JSON file",
   "version": "1.1.1",
-  "author": "Ron Waldon <jokeyrhyme@gmail.com> (https://github.com/jokeyrhyme)",
+  "description": "safely and conveniently edit the contents of a JSON file",
+  "keywords": [],
+  "homepage": "https://github.com/jokeyrhyme/update-json-file.js#readme",
   "bugs": {
     "url": "https://github.com/jokeyrhyme/update-json-file.js/issues"
+  },
+  "license": "MIT",
+  "author": "Ron Waldon <jokeyrhyme@gmail.com> (https://github.com/jokeyrhyme)",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jokeyrhyme/update-json-file.js.git"
+  },
+  "scripts": {
+    "eslint": "eslint --fix --cache .",
+    "flow": "npx -q flow-bin@^0.54.1 check",
+    "jest": "jest",
+    "nsp": "npx -q nsp check",
+    "sort-package-json": "npx -q sort-package-json",
+    "pretest": "npm run prettier && npm run eslint && npm run sort-package-json",
+    "test": "npm run jest && npm run nsp && npm run flow",
+    "prettier": "npx -q prettier --list-different --write \"{,!(build|coverage|dist|flow-typed|typings|vendor)/**/}*.{css,js,jsx,less,scss,ts,tsx}\" || exit 0"
   },
   "dependencies": {
     "load-json-file": "^3.0.0",
@@ -12,14 +33,11 @@
   },
   "devDependencies": {
     "eslint": "^4.0.0",
-    "eslint-config-standard": "^10.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-node": "^5.0.0",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "fixpack": "^2.3.1",
-    "flow-bin": "^0.54.0",
-    "jest": "^20.0.2",
+    "jest": "^21.1.0",
+    "npx": "^9.6.0",
     "pify": "^3.0.0",
     "rimraf": "^2.5.4",
     "temp": "^0.8.3"
@@ -28,10 +46,10 @@
     "node": ">=4",
     "npm": ">=3"
   },
-  "files": [
-    "index.js"
+  "eslintIgnore": [
+    "coverage",
+    "flow-typed"
   ],
-  "homepage": "https://github.com/jokeyrhyme/update-json-file.js#readme",
   "jest": {
     "collectCoverage": true,
     "coverageThreshold": {
@@ -40,20 +58,8 @@
       }
     }
   },
-  "keywords": [],
-  "license": "MIT",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jokeyrhyme/update-json-file.js.git"
-  },
-  "scripts": {
-    "eslint": "eslint --fix --cache .",
-    "fixpack": "fixpack",
-    "flow_check": "flow check",
-    "jest": "jest",
-    "posttest": "npm run eslint && npm run flow_check",
-    "pretest": "npm run fixpack",
-    "test": "npm run jest"
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
   }
 }

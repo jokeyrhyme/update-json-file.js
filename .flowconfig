@@ -4,8 +4,15 @@
 <PROJECT_ROOT>/coverage/.*
 <PROJECT_ROOT>/dist/.*
 <PROJECT_ROOT>/node_modules/babel.*
-<PROJECT_ROOT>/node_modules/y18n/test/.*
 <PROJECT_ROOT>/node_modules/\.cache/.*
+<PROJECT_ROOT>/node_modules/.*/test/.*
+<PROJECT_ROOT>/node_modules/.*/tests/.*
+
+[include]
+
+[libs]
+
+[lints]
+all=warn
 
 [options]
-suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
